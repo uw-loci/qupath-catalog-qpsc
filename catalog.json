@@ -1,0 +1,52 @@
+{
+  "name": "QPSC Extensions",
+  "description": "Extensions for the QPSC (QuPath Scope Control) microscope acquisition system, developed at LOCI, University of Wisconsin-Madison",
+  "extensions": [
+    {
+      "name": "QPSC - QuPath Scope Control",
+      "description": "Microscope control and automated acquisition from within QuPath via Pycro-Manager",
+      "author": "Michael Nelson",
+      "homepage": "https://github.com/uw-loci/qupath-extension-qpsc",
+      "starred": true,
+      "releases": [
+        {
+          "name": "v0.4.0",
+          "main_url": "https://github.com/uw-loci/qupath-extension-qpsc/releases/download/v0.4.0/qupath-extension-qpsc-0.4.0-all.jar",
+          "version_range": {
+            "min": "v0.6.0"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PPM Modality",
+      "description": "Polarized light microscopy (PPM) modality plugin for QPSC multi-angle acquisition",
+      "author": "Michael Nelson",
+      "homepage": "https://github.com/uw-loci/qupath-extension-ppm",
+      "releases": [
+        {
+          "name": "v0.1.3",
+          "main_url": "https://github.com/uw-loci/qupath-extension-ppm/releases/download/v0.1.3/qupath-extension-ppm-0.1.3-all.jar",
+          "version_range": {
+            "min": "v0.6.0"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tiles to Pyramid",
+      "description": "Stitches acquired tile images into OME-TIFF pyramidal whole slide images",
+      "author": "Michael Nelson",
+      "homepage": "https://github.com/uw-loci/qupath-extension-tiles-to-pyramid",
+      "releases": [
+        {
+          "name": "v0.2.1",
+          "main_url": "https://github.com/uw-loci/qupath-extension-tiles-to-pyramid/releases/download/v0.2.1/qupath-extension-tiles-to-pyramid-0.2.1-all.jar",
+          "version_range": {
+            "min": "v0.6.0"
+          }
+        }
+      ]
+    }
+  ]
+}
