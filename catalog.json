@@ -1,6 +1,6 @@
 {
-  "name": "QPSC Extensions",
-  "description": "Extensions for the QPSC (QuPath Scope Control) microscope acquisition system, developed at LOCI, University of Wisconsin-Madison",
+  "name": "QPSC Microscope Extensions",
+  "description": "Extensions for the QPSC (QuPath Scope Control) microscope acquisition system and related microscopy tools, developed at LOCI, University of Wisconsin-Madison",
   "extensions": [
     {
       "name": "QPSC - QuPath Scope Control",
@@ -10,8 +10,8 @@
       "starred": true,
       "releases": [
         {
-          "name": "v0.4.0",
-          "main_url": "https://github.com/uw-loci/qupath-extension-qpsc/releases/download/v0.4.0/qupath-extension-qpsc-0.4.0-all.jar",
+          "name": "v0.4.1",
+          "main_url": "https://github.com/uw-loci/qupath-extension-qpsc/releases/download/v0.4.1/qupath-extension-qpsc-0.4.1-all.jar",
           "version_range": {
             "min": "v0.6.0"
           }
@@ -19,8 +19,8 @@
       ]
     },
     {
-      "name": "PPM Modality",
-      "description": "Polarized light microscopy (PPM) modality plugin for QPSC multi-angle acquisition",
+      "name": "PPM Analysis Tools",
+      "description": "Polarized light microscopy (PPM) analysis: hue range filtering, polarity plots, perpendicularity analysis, and batch processing",
       "author": "Michael Nelson",
       "homepage": "https://github.com/uw-loci/qupath-extension-ppm",
       "releases": [
@@ -34,14 +34,29 @@
       ]
     },
     {
+      "name": "OCR for Labels",
+      "description": "Optical character recognition for extracting text from slide labels, barcodes, and macro images",
+      "author": "Michael Nelson",
+      "homepage": "https://github.com/uw-loci/qupath-extension-ocr4labels",
+      "releases": [
+        {
+          "name": "v0.3.0",
+          "main_url": "https://github.com/uw-loci/qupath-extension-ocr4labels/releases/download/v0.3.0/qupath-extension-ocr4labels-0.3.0-all.jar",
+          "version_range": {
+            "min": "v0.6.0"
+          }
+        }
+      ]
+    },
+    {
       "name": "Tiles to Pyramid",
       "description": "Stitches acquired tile images into OME-TIFF pyramidal whole slide images",
       "author": "Michael Nelson",
       "homepage": "https://github.com/uw-loci/qupath-extension-tiles-to-pyramid",
       "releases": [
         {
-          "name": "v0.2.1",
-          "main_url": "https://github.com/uw-loci/qupath-extension-tiles-to-pyramid/releases/download/v0.2.1/qupath-extension-tiles-to-pyramid-0.2.1-all.jar",
+          "name": "v0.2.2",
+          "main_url": "https://github.com/uw-loci/qupath-extension-tiles-to-pyramid/releases/download/v0.2.2/qupath-extension-tiles-to-pyramid-0.2.2.jar",
           "version_range": {
             "min": "v0.6.0"
           }
