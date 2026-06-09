@@ -25,8 +25,8 @@
       "homepage": "https://github.com/uw-loci/qupath-extension-ppm",
       "releases": [
         {
-          "name": "v0.2.0",
-          "main_url": "https://github.com/uw-loci/qupath-extension-ppm/releases/download/v0.2.0/qupath-extension-ppm-0.2.0-all.jar",
+          "name": "v0.2.1",
+          "main_url": "https://github.com/uw-loci/qupath-extension-ppm/releases/download/v0.2.1/qupath-extension-ppm-0.2.1-all.jar",
           "version_range": {
             "min": "v0.6.0"
           }
