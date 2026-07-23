@@ -13,7 +13,7 @@
           "name": "v0.8.0",
           "main_url": "https://github.com/uw-loci/qupath-extension-qpsc/releases/download/v0.8.0/qupath-extension-qpsc-0.8.0.jar",
           "version_range": {
-            "min": "v0.6.0"
+            "min": "v0.7.0"
           }
         },
         {
