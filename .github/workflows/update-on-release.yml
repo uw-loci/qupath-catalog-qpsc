@@ -48,7 +48,22 @@ jobs:
             echo "asset_url=${{ github.event.client_payload.asset_url }}" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Skip pre-releases
+        id: pre
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # A pre-release is a development build installed by hand; the catalog
+          # must not offer it as an update. The extension's notify workflow already
+          # skips pre-releases; this is the catalog's own check of the release.
+          PRE=$(gh api "repos/${{ steps.inputs.outputs.repo }}/releases/tags/${{ steps.inputs.outputs.tag }}" --jq '.prerelease' 2>/dev/null || echo "unknown")
+          echo "prerelease=$PRE" >> "$GITHUB_OUTPUT"
+          if [ "$PRE" = "true" ]; then
+            echo "::notice::${{ steps.inputs.outputs.repo }} ${{ steps.inputs.outputs.tag }} is a pre-release; catalog left unchanged"
+          fi
+
       - name: Bump catalog entry
+        if: steps.pre.outputs.prerelease != 'true'
         id: bump
         run: |
           # Use `set +e` so a non-zero exit from bump_catalog.py does not
@@ -70,12 +85,12 @@ jobs:
           echo "bump_catalog.py exited with $ec"
 
       - name: Handle no-op
-        if: steps.bump.outputs.exit_code == '78'
+        if: steps.pre.outputs.prerelease != 'true' && steps.bump.outputs.exit_code == '78'
         run: |
           echo "Catalog already up to date for ${{ steps.inputs.outputs.repo }} -> ${{ steps.inputs.outputs.tag }}; nothing to commit."
 
       - name: Fail on real error
-        if: ${{ steps.bump.outputs.exit_code != '0' && steps.bump.outputs.exit_code != '78' }}
+        if: ${{ steps.pre.outputs.prerelease != 'true' && steps.bump.outputs.exit_code != '0' && steps.bump.outputs.exit_code != '78' }}
         run: |
           echo "::error::bump_catalog.py exited with ${{ steps.bump.outputs.exit_code }}"
           exit 1
